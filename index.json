@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "plugins": [
+    {
+      "path": "plugins/easing-extra",
+      "updated": "2026-08-17",
+      "manifest": {
+        "id": "easing-extra",
+        "name": "Easing Extra",
+        "version": "1.0.0",
+        "description": "More easing curves than the built-in ease: quad, cubic, back and elastic, in and out.",
+        "author": "desmos-ide",
+        "license": "Apache-2.0",
+        "keywords": ["animation", "easing", "dsl"],
+        "lib": "lib.dsmx",
+        "icon": "📈"
+      }
+    },
+    {
+      "path": "plugins/starfield",
+      "updated": "2026-08-17",
+      "manifest": {
+        "id": "starfield",
+        "name": "Starfield",
+        "version": "1.0.0",
+        "description": "Scatters points in a sunflower spiral, so they stay evenly spaced however many you ask for.",
+        "author": "desmos-ide",
+        "license": "Apache-2.0",
+        "keywords": ["generator", "points", "art"],
+        "main": "main.js",
+        "icon": "✦"
+      }
+    },
+    {
+      "path": "plugins/lissajous",
+      "updated": "2026-08-17",
+      "manifest": {
+        "id": "lissajous",
+        "name": "Lissajous",
+        "version": "1.0.0",
+        "description": "Draws Lissajous figures, and a whole grid of them, from one line.",
+        "author": "desmos-ide",
+        "license": "Apache-2.0",
+        "keywords": ["generator", "curve", "art"],
+        "main": "main.js",
+        "lib": "lib.dsmx",
+        "icon": "🎚"
+      }
+    }
+  ]
+}

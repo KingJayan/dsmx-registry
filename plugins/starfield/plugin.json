@@ -1,0 +1,11 @@
+{
+  "id": "starfield",
+  "name": "Starfield",
+  "version": "1.0.0",
+  "description": "Scatters points in a sunflower spiral, so they stay evenly spaced however many you ask for.",
+  "author": "desmos-ide",
+  "license": "Apache-2.0",
+  "keywords": ["generator", "points", "art"],
+  "main": "main.js",
+  "icon": "✦"
+}

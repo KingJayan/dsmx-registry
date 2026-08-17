@@ -1,0 +1,12 @@
+{
+  "id": "lissajous",
+  "name": "Lissajous",
+  "version": "1.0.0",
+  "description": "Draws Lissajous figures, and a whole grid of them, from one line.",
+  "author": "desmos-ide",
+  "license": "Apache-2.0",
+  "keywords": ["generator", "curve", "art"],
+  "main": "main.js",
+  "lib": "lib.dsmx",
+  "icon": "🎚"
+}
