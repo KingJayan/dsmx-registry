@@ -1,26 +1,22 @@
 # dsmx registry
 
-The plugin marketplace for [desmos-ide](https://github.com/KingJayan/desmos-ide).
+plugin marketplace for [desmos-ide](https://github.com/KingJayan/desmos-ide).
 
-`index.json` is the whole marketplace. The app reads it to fill the plugin sidebar, and
-the docs site reads it to build the marketplace page. Each entry names a folder under
-`plugins/`, and that folder holds what actually installs.
 
-## What a plugin is
+## Plugins
 
-A plugin is a manifest and up to three parts, all of them optional:
+A plugin contains three, optional parts:
 
-| file | what it does |
+| file | purpose |
 | --- | --- |
-| `plugin.json` | the manifest. Required |
-| `lib.dsmx` | DSL the app folds into every compile, so its `fn` declarations are callable anywhere |
-| `main.js` | javascript that adds generators and commands. It runs in a worker with no network and no DOM |
+| `plugin.json` | the manifest; Required |
+| `lib.dsmx` | `.dsmx` baked into compilation, like a library class file |
+| `main.js` | js for generators and commands (runs in a sandbox) |
 | `README.md` | what the extension page shows |
 
-Plugins are client-side only. A share link carries the file, not the plugin, so
-anything you send someone must compile without it.
+Plugins are client-side only. A share link contains the file, so plugins that compile dsmx work sort of like python libraries
 
-## The manifest
+## plugin.json
 
 ```json
 {
@@ -37,12 +33,12 @@ anything you send someone must compile without it.
 }
 ```
 
-`id` must be lowercase letters, digits and hyphens, and must match the folder name.
-`version` must be semver.
+`id` must be lowercase letters, digits and hyphens, and **must match the folder name**.
+`version` must use SemVer.
 
-## Writing main.js
+## main.js
 
-The file is handed one global, `dsmx`. There is nothing else: no `fetch`, no
+The file gets `dsmx` as its sole global. There is nothing else: no `fetch`, no
 `localStorage`, no `window`, no way to reach the file the user has open.
 
 ```js
@@ -55,29 +51,18 @@ dsmx.command('insert', 'starfield: insert 120 stars', () => ({
   insert: '@stars(120, 6)\n',
 }));
 ```
+In this case, the starfield macro is called when user writes `@stars(120,6)` on its own line.
+Arguments can be numbers and quoted strings. macro timeout is a 90 seconds.
 
-A macro is called when the user writes `@stars(120, 6)` on a line of its own. Arguments
-are numbers and quoted strings. Whatever the macro returns is compiled in place of that
-line, so an error in the generated DSL is reported against the line the user wrote.
+A command returns `{ insert }`, `{ replace }`, `{ status }`, or nothing.
 
-A command returns `{ insert }`, `{ replace }` or `{ status }`, or nothing.
+## lib.dsmx
 
-Macros run on every keystroke that touches one. A macro that takes longer than a second
-and a half is stopped, and its plugin is reloaded.
-
-## Writing lib.dsmx
-
-Only `fn` and `alias` declarations. Anything that would draw is ignored, because a
-plugin must not put expressions on a graph the user did not ask for. If the library
-does not compile on its own, the whole of it is dropped rather than reporting an error
-against the user's file.
+Only `fn` and `alias` declarations. If a library has an error, it does not get loaded.
 
 ## Submitting
 
 1. Fork this repo.
 2. Add `plugins/<your-id>/`.
 3. Add the entry to `index.json`, keeping the list in the order plugins were added.
-4. Open a pull request.
-
-Every plugin here is reviewed by hand before it merges. `main.js` is read line by line,
-so keep it short and keep it clear.
+4. Open a pull request and assign @KingJayan
