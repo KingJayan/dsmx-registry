@@ -1,0 +1,11 @@
+{
+  "id": "toolkit",
+  "name": "Toolkit",
+  "version": "1.0.0",
+  "description": "One key for the run you do every time: format, save, export, share. Plus the panels, on Alt.",
+  "author": "desmos-ide",
+  "license": "Apache-2.0",
+  "keywords": ["workflow", "commands", "keybindings"],
+  "main": "main.js",
+  "icon": "icon.svg"
+}

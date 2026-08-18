@@ -1,0 +1,11 @@
+{
+  "id": "snapshots",
+  "name": "Snapshots",
+  "version": "1.0.0",
+  "description": "Keep named copies of a file as you work, and go back to any of them. Kept per folder.",
+  "author": "desmos-ide",
+  "license": "Apache-2.0",
+  "keywords": ["history", "editing", "workflow", "git"],
+  "main": "main.js",
+  "icon": "icon.svg"
+}

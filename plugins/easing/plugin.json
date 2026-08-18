@@ -1,0 +1,11 @@
+{
+  "id": "easing",
+  "name": "Easing",
+  "version": "1.0.0",
+  "description": "The full easing set — quad, cubic, quart, sine, expo, circ, back, elastic and bounce — in, out and in-out.",
+  "author": "desmos-ide",
+  "license": "Apache-2.0",
+  "keywords": ["animation", "easing", "dsl", "library"],
+  "lib": "lib.dsmx",
+  "icon": "icon.svg"
+}

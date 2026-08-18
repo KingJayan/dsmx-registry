@@ -1,0 +1,42 @@
+// every curve takes u from 0 to 1 and gives back 0 to 1.
+// in starts slow, out ends slow, in_out does both.
+
+fn ease_in_quad(u) = u^2
+fn ease_out_quad(u) = 1 - (1 - u)^2
+fn ease_in_out_quad(u) = 2*u^2 where u < 0.5 else 1 - 2*(1 - u)^2
+
+fn ease_in_cubic(u) = u^3
+fn ease_out_cubic(u) = 1 + (u - 1)^3
+fn ease_in_out_cubic(u) = 4*u^3 where u < 0.5 else 1 + 4*(u - 1)^3
+
+fn ease_in_quart(u) = u^4
+fn ease_out_quart(u) = 1 - (1 - u)^4
+fn ease_in_out_quart(u) = 8*u^4 where u < 0.5 else 1 - 8*(1 - u)^4
+
+fn ease_in_sine(u) = 1 - cos(1.5708*u)
+fn ease_out_sine(u) = sin(1.5708*u)
+fn ease_in_out_sine(u) = 0.5 - 0.5*cos(3.1416*u)
+
+fn ease_in_expo(u) = 2^(10*u - 10)
+fn ease_out_expo(u) = 1 - 2^(-10*u)
+fn ease_in_out_expo(u) = 0.5*2^(20*u - 10) where u < 0.5 else 1 - 0.5*2^(10 - 20*u)
+
+fn ease_in_circ(u) = 1 - sqrt(1 - u^2)
+fn ease_out_circ(u) = sqrt(1 - (u - 1)^2)
+fn ease_in_out_circ(u) = 0.5 - 0.5*sqrt(1 - 4*u^2) where u < 0.5 else 0.5 + 0.5*sqrt(1 - 4*(u - 1)^2)
+
+// back overshoots the end and comes back to it
+fn ease_in_back(u) = 2.70158*u^3 - 1.70158*u^2
+fn ease_out_back(u) = 1 + 2.70158*(u - 1)^3 + 1.70158*(u - 1)^2
+fn ease_in_out_back(u) = 2*u^2*(3.5949*u - 2.5949) where u < 0.5 else 1 + 2*(u - 1)^2*(3.5949*(2*u - 2) + 2.5949)
+
+// elastic rings down to rest
+fn ease_in_elastic(u) = -2^(10*u - 10)*sin((10*u - 10.75)*2.0944)
+fn ease_out_elastic(u) = 1 + 2^(-10*u)*sin((10*u - 0.75)*2.0944)
+
+// bounce lands, lifts, and lands again
+fn ease_out_bounce(u) = 7.5625*u^2 where u < 0.3636 else (7.5625*(u - 0.5455)^2 + 0.75 where u < 0.7273 else (7.5625*(u - 0.8182)^2 + 0.9375 where u < 0.9091 else 7.5625*(u - 0.9545)^2 + 0.9844))
+fn ease_in_bounce(u) = 1 - ease_out_bounce(1 - u)
+
+// mix takes a curve's output and puts it between two values
+fn mix(a, b, u) = a + (b - a)*u

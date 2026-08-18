@@ -1,0 +1,11 @@
+{
+  "id": "author-card",
+  "name": "Author Card",
+  "version": "1.0.0",
+  "description": "Sign a graph with your name, placed where you want it. The handle lives in the keychain, not in a settings file.",
+  "author": "desmos-ide",
+  "license": "Apache-2.0",
+  "keywords": ["text", "labels", "workflow"],
+  "main": "main.js",
+  "icon": "icon.svg"
+}

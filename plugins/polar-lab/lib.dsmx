@@ -1,0 +1,14 @@
+// polar shapes, for writing one by hand instead of generating it
+
+fn rose_r(t, k) = cos(k*t)
+fn rose_x(t, k, a) = a*cos(k*t)*cos(t)
+fn rose_y(t, k, a) = a*cos(k*t)*sin(t)
+
+fn spiral_x(t, a, b) = (a + b*t)*cos(t)
+fn spiral_y(t, a, b) = (a + b*t)*sin(t)
+
+fn epi_x(t, r, k) = r*(k + 1)*cos(t) - r*cos((k + 1)*t)
+fn epi_y(t, r, k) = r*(k + 1)*sin(t) - r*sin((k + 1)*t)
+
+fn hypo_x(t, r, k) = r*(k - 1)*cos(t) + r*cos((k - 1)*t)
+fn hypo_y(t, r, k) = r*(k - 1)*sin(t) - r*sin((k - 1)*t)

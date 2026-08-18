@@ -2,49 +2,119 @@
   "version": 1,
   "plugins": [
     {
-      "path": "plugins/easing-extra",
+      "path": "plugins/polar-lab",
       "updated": "2026-08-17",
       "manifest": {
-        "id": "easing-extra",
-        "name": "Easing Extra",
+        "id": "polar-lab",
+        "name": "Polar Lab",
         "version": "1.0.0",
-        "description": "More easing curves than the built-in ease: quad, cubic, back and elastic, in and out.",
+        "description": "Rose curves, spirals and epicycloids from one line.",
         "author": "desmos-ide",
         "license": "Apache-2.0",
-        "keywords": ["animation", "easing", "dsl"],
+        "keywords": ["generator", "curve", "polar", "art"],
+        "main": "main.js",
         "lib": "lib.dsmx",
-        "icon": "📈"
+        "icon": "icon.svg"
       }
     },
     {
-      "path": "plugins/starfield",
+      "path": "plugins/snapshots",
       "updated": "2026-08-17",
       "manifest": {
-        "id": "starfield",
-        "name": "Starfield",
+        "id": "snapshots",
+        "name": "Snapshots",
         "version": "1.0.0",
-        "description": "Scatters points in a sunflower spiral, so they stay evenly spaced however many you ask for.",
+        "description": "Keep named copies of a file as you work, and go back to any of them. Kept per folder.",
         "author": "desmos-ide",
         "license": "Apache-2.0",
-        "keywords": ["generator", "points", "art"],
+        "keywords": ["history", "editing", "workflow"],
         "main": "main.js",
-        "icon": "✦"
+        "icon": "icon.svg"
       }
     },
     {
-      "path": "plugins/lissajous",
+      "path": "plugins/toolkit",
       "updated": "2026-08-17",
       "manifest": {
-        "id": "lissajous",
-        "name": "Lissajous",
+        "id": "toolkit",
+        "name": "Toolkit",
         "version": "1.0.0",
-        "description": "Draws Lissajous figures, and a whole grid of them, from one line.",
+        "description": "One key for the run you do every time: format, save, export, share. Plus the panels, on Alt.",
         "author": "desmos-ide",
         "license": "Apache-2.0",
-        "keywords": ["generator", "curve", "art"],
+        "keywords": ["workflow", "commands", "keybindings"],
         "main": "main.js",
+        "icon": "icon.svg"
+      }
+    },
+    {
+      "path": "plugins/easing",
+      "updated": "2026-08-17",
+      "manifest": {
+        "id": "easing",
+        "name": "Easing",
+        "version": "1.0.0",
+        "description": "The full easing set — quad, cubic, quart, sine, expo, circ, back, elastic and bounce — in, out and in-out.",
+        "author": "desmos-ide",
+        "license": "Apache-2.0",
+        "keywords": ["animation", "easing", "dsl", "library"],
         "lib": "lib.dsmx",
-        "icon": "🎚"
+        "icon": "icon.svg"
+      }
+    },
+    {
+      "path": "plugins/author-card",
+      "updated": "2026-08-17",
+      "manifest": {
+        "id": "author-card",
+        "name": "Author Card",
+        "version": "1.0.0",
+        "description": "Sign a graph with your name, placed where you want it. The handle lives in the keychain, not in a settings file.",
+        "author": "desmos-ide",
+        "license": "Apache-2.0",
+        "keywords": ["text", "labels", "workflow"],
+        "main": "main.js",
+        "icon": "icon.svg"
+      }
+    },
+    {
+      "path": "plugins/midnight-grid",
+      "updated": "2026-08-17",
+      "manifest": {
+        "id": "midnight-grid",
+        "name": "Midnight Grid",
+        "version": "1.0.0",
+        "description": "A quiet blue editor theme for long sessions, with the DSL keywords picked out and the noise turned down.",
+        "author": "desmos-ide",
+        "license": "Apache-2.0",
+        "keywords": ["theme", "dark", "editor"],
+        "icon": "icon.svg",
+        "theme": {
+          "dark": true,
+          "editor": {
+            "editor.background": "#0d1117",
+            "editor.foreground": "#c6d0e0",
+            "editorLineNumber.foreground": "#39415a",
+            "editorLineNumber.activeForeground": "#7aa2f7",
+            "editor.selectionBackground": "#20304d",
+            "editor.lineHighlightBackground": "#131a26",
+            "editorCursor.foreground": "#7aa2f7",
+            "editorIndentGuide.background": "#1b2230",
+            "editorWhitespace.foreground": "#222b3a",
+            "editorBracketMatch.background": "#25324a",
+            "editorBracketMatch.border": "#7aa2f7"
+          },
+          "tokens": {
+            "keyword": "#7aa2f7",
+            "identifier": "#c6d0e0",
+            "number": "#f7c67a",
+            "string": "#9ece6a",
+            "comment": "#4a5568",
+            "operator": "#89ddff",
+            "delimiter": "#5d6b85",
+            "type": "#bb9af7"
+          }
+        }
       }
     }
   ]

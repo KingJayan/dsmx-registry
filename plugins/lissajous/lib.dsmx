@@ -1,3 +1,0 @@
-// the x and y of a lissajous figure for writing one by hand
-fn liss_x(t, a, d) = sin(a*t + d)
-fn liss_y(t, b) = sin(b*t)

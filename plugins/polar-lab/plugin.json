@@ -1,0 +1,12 @@
+{
+  "id": "polar-lab",
+  "name": "Polar Lab",
+  "version": "1.0.0",
+  "description": "Rose curves, spirals and epicycloids from one line.",
+  "author": "desmos-ide",
+  "license": "Apache-2.0",
+  "keywords": ["generator", "curve", "polar", "art"],
+  "main": "main.js",
+  "lib": "lib.dsmx",
+  "icon": "icon.svg"
+}
