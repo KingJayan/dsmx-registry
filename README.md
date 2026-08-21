@@ -125,7 +125,6 @@ A read is immediate; a write returns a promise.
 ```js
 let k = dsmx.globalState.get('k', 5);
 await dsmx.globalState.update('k', 8);
-dsmx.globalState.setKeysForSync(['k']);
 ```
 
 `secrets` is the macOS keychain, under your plugin's name. No other plugin can read

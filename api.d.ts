@@ -91,9 +91,7 @@ declare namespace dsmx {
 
   const workspaceState: Memento;
 
-  const globalState: Memento & {
-    setKeysForSync(keys: string[]): void;
-  };
+  const globalState: Memento;
 
   const secrets: {
     get(key: string): Promise<string | null>;

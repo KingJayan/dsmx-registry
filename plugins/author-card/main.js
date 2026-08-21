@@ -9,8 +9,6 @@ let style = dsmx.globalState.get('style', 'corner');
 let colour = dsmx.globalState.get('colour', 'grey');
 let showDate = dsmx.globalState.get('showDate', false);
 
-dsmx.globalState.setKeysForSync(['style', 'colour', 'showDate']);
-
 function quoted(text) {
   return text.replace(/["\\]/g, '');
 }

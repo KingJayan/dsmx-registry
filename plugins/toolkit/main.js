@@ -22,7 +22,6 @@ const STEPS = {
 };
 
 let chosen = dsmx.globalState.get('routine', 'tidy');
-dsmx.globalState.setKeysForSync(['routine']);
 
 function widgets() {
   return [

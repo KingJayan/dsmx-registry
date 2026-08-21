@@ -50,8 +50,6 @@ const settings = {
   fade: dsmx.globalState.get('fade', true),
 };
 
-dsmx.globalState.setKeysForSync(['family', 'k', 'size', 'layers', 'fade']);
-
 function whole(value, what, low, high) {
   const n = Math.round(Number(value));
   if (!Number.isFinite(n) || n < low || n > high) {
